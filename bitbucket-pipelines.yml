@@ -1,0 +1,36 @@
+image: node:16.13.1
+
+pipelines:
+  branches:
+    staging:
+    - step:
+        caches:
+         - node
+        name: "Build and Deploy on Dev"
+        script:
+          - npm install
+          - CI=false
+          - npm run build
+          - ls -ltr
+          - cd build
+          - pipe: atlassian/aws-s3-deploy:0.2.4
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_STAGING
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_STAGING
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              COMMAND: 'deploy-only'
+              DEBUG: "true"
+              ACL: "public-read"
+              S3_BUCKET: $S3_BUCKET_STAGING
+              LOCAL_PATH: $(pwd)
+    - step:
+        name: "Invalidating cache on cloudfront"
+        script:
+          - pipe: "atlassian/aws-cloudfront-invalidate:0.1.2"
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_STAGING
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_STAGING
+              DISTRIBUTION_ID: $DISTRIBUTION_ID_STAGING
+        size: 2x
+          

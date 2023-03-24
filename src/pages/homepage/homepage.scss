@@ -1,0 +1,162 @@
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/mixins.scss";
+.homepage {
+  background-color: #ffffff;
+}
+.banner {
+  .bg-image {
+    background-image: url("../../assets/images/car-img-1.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner-text {
+      text-align: center;
+      color: #ffffff;
+
+      h1 {
+        font-size: 4.2rem;
+        font-weight: 700;
+        text-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+      }
+      h2 {
+        font-size: 2.1rem;
+        font-weight: 700;
+        line-height: 2.2rem;
+        text-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+      }
+      .ANMELDEN-button {
+        @include button-style(
+          $bg-color: $white-color,
+          $color: $black-color,
+          $padding: 1.2rem 5.8rem,
+          $radius: 0rem,
+          $border: none,
+          $margin: 0,
+          $font-size: 1rem,
+          $box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+        );
+        font-weight: 700;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+#link-button {
+  text-decoration: none;
+  color: black;
+}
+
+.info-section {
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 50px solid #ffffff;
+  padding: 1rem;
+  margin-top: -1rem;
+  .info-heading {
+    margin: 1rem 0;
+    font-size: 2.3rem;
+  }
+  .info-detail {
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+  }
+}
+.battery-image {
+  width: 100%;
+  padding-bottom: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 60%;
+  }
+}
+
+footer {
+  padding: 2rem 3.3rem;
+  background-color: #024a96;
+  display: flex;
+  flex-wrap: wrap;
+
+  text-align: center;
+  justify-content: center;
+  a {
+    margin: 1rem 2.3rem;
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner .bg-image
+  {
+    min-height: 550px;
+  }
+  .banner .bg-image .banner-text h1
+  {
+    font-size: 3rem;
+  }
+  .banner .bg-image .banner-text h2
+  {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+ 
+  .banner {
+    .bg-image {
+      .banner-text {
+        h1 {
+          font-size: 2.1rem;
+          font-weight: 700;
+        }
+        h2 {
+          font-size: 1.3rem;
+          margin-top: 1.5rem;
+          font-weight: 500;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+  .info-section {
+    padding-top: 1rem;
+    .info-heading {
+      margin: 1rem 0;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+    .info-detail {
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  footer {
+    padding: 2rem;
+    background-color: #024a96;
+    flex-direction: column;
+
+    a {
+      margin: 1rem 2.3rem;
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+.setting-page {
+  h1 {
+    margin-bottom: 3rem;
+    font-size: 2.1rem;
+   
+  }
+  .setting-link {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+  }
+  .change-settings-card {
+    .left-col {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      position: relative;
+      .edit-info-btn {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+    .for-mobile {
+      display: none;
+    }
+
+    button {
+      @include button-style(
+        $bg-color: $dark-blue-color,
+        $color: $white-color,
+        $padding: 0.7rem 2rem,
+        $radius: 0,
+        $border: none,
+        $margin: 0,
+        $font-size: 0.8rem,
+        $box-shadow: $main-box-shadow-dark
+      );
+    }
+  }
+  svg {
+    cursor: pointer;
+    font-weight: lighter;
+    color: #06488E;
+    font-size: 1.5em;
+    position: relative;
+    top: 3px;
+  }
+}
+.change-settings-card h6
+{
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.change-settings-card .text-field label, 
+.change-settings-card .my-checkbox label
+{
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 500px) {
+  .setting-page {
+    .text-field {
+      input {
+        width: 100% !important;
+      }
+    }
+    .setting-link {
+      font-size: 15px;
+    }
+    .change-settings-card {
+      .heading {
+        svg {
+          font-size: 15px;
+        }
+        h1 {
+          font-size: 15px;
+        }
+      }
+      .left-col {
+        .my-checkbox {
+          &:last-child {
+            margin-left: 1rem !important;
+          }
+        }
+        .edit-info-btn {
+          display: none;
+        }
+      }
+      .for-mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 820px) {
+  .setting-page {
+    .setting-link {
+      font-size: 20px;
+    }
+    .change-settings-card {
+      .left-col {
+        .edit-info-btn {
+          display: none;
+        }
+      }
+      .for-mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .setting-page {
+    .change-settings-card {
+      .left-col {
+        .my-checkbox {
+          &:last-child {
+            margin-left: 0 !important;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

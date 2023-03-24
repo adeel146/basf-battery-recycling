@@ -1,0 +1,245 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/mixins.scss";
+
+.orders-page {
+  .order-card {
+    background-color: $white-color;
+    border: 1px solid $dark-blue-color;
+    box-shadow: $main-box-shadow-dark;
+    width: 194px;
+    padding: 0.7rem;
+    margin: 2.5rem 2.3rem 0 0;
+    cursor: pointer;
+    .order-image {
+      background-color: $dark-blue-color;
+      height: 90px;
+      margin-bottom: 0.5rem;
+    }
+    h5 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .cart {
+    cursor: pointer;
+    .notification {
+      background-color: $sky-blue-color;
+      text-align: center;
+      height: 40px;
+      width: 40px;
+      margin-top: -1.3rem;
+      margin-left: 2rem;
+      color: $white-color;
+    }
+  }
+}
+
+.order-next-page {
+  .main-heading {
+    h1 {
+      margin-right: 15px;
+    }
+  }
+  .spinner-border {
+    height: 3rem !important;
+    width: 3rem !important;
+  }
+  .checkout-heading {
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .file-tag {
+    font-size: 12px;
+    margin-top: 1rem;
+    margin-right: -10px;
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  .checkout-form {
+    p {
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .chckbx {
+      p {
+        margin-bottom: 0.6rem;
+      }
+    }
+    .chckbx3 {
+      margin-top: 4rem;
+    }
+    .right-dropdown {
+      .custom-input {
+        margin-top: 2.5%;
+        outline: none;
+        border: 1px solid $dark-blue-color;
+        padding: 0.15rem 0.4rem;
+        width: 73.2%;
+      }
+    }
+    .custom-dropdown {
+      select {
+        width: 100%;
+        padding: 0.15rem 0.4rem;
+        border: 1px solid $dark-blue-color;
+        background: url("../../../assets/icons/down-arrow.png") no-repeat right
+          white;
+        -webkit-appearance: none;
+        background-position-x: 97%;
+      }
+    }
+    .txt-field1 {
+      margin-top: -1.5rem;
+      margin-left: 1.2rem;
+    }
+  }
+
+  .order-next-page-btn {
+    @include button-style(
+      $bg-color: $dark-blue-color,
+      $color: $white-color,
+      // $padding: 0.7rem 3.3rem,
+      $radius: 0,
+      $border: none,
+      $margin: 0 1.2rem 0 1rem,
+      $font-size: 0.8rem,
+      $box-shadow: none
+    );
+  }
+  label {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .add-new {
+    font-size: 10px;
+    margin-top: 0.5rem;
+    svg {
+      font-size: 14px;
+      color: $dark-blue-color;
+    }
+  }
+  .text-field {
+    .form-control.is-invalid {
+      border-color: $dark-blue-color;
+    }
+  }
+}
+.order-next-page .checkout-form .chckbx p {
+  font-size: 13px;
+}
+.order-card.update__design h5 {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  min-height: 24px;
+}
+.order-card.update__design p {
+  font-size: 12px;
+  min-height: 50px;
+}
+@media (max-width: 1366px) {
+  .orders-page .order-card {
+    width: 188px;
+    margin: 2.5rem 2.1rem 0 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1414px) {
+  .Anzahl {
+    margin-bottom: 37px;
+  }
+}
+@media (max-width: 1100px) {
+  .main-heading {
+    flex-wrap: wrap;
+  }
+  .right-dropdown.col-lg-4 {
+    width: 36%;
+  }
+  .order-next-page {
+    .checkout-form {
+      .right-dropdown {
+        .custom-input {
+          margin-top: 5.2px;
+          outline: none;
+          border: 1px solid $dark-blue-color;
+          padding: 0.15rem 0.4rem;
+          width: 73.2%;
+        }
+      }
+    }
+  }
+
+  .right-dropdown p.mt-2.ms-5 {
+    margin-left: 0 !important;
+  }
+  .orders-page .order-card {
+    margin: 2.5rem 1.5rem 0 0;
+  }
+}
+@media (max-width: 991px) {
+  .right-dropdown.col-lg-4 {
+    width: 100%;
+  }
+  .orders-page .order-card {
+    width: 180px;
+    margin: 2.5rem 1rem 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .orders-page .order-card {
+    width: 184px;
+    margin: 2.5rem 1.2rem 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .orders-page {
+    .orders-list {
+      justify-content: center;
+    }
+    .cart {
+      margin-right: 1rem;
+    }
+    .order-card {
+      width: 250px;
+      margin: 1.5rem 0 0 0;
+    }
+  }
+  .order-next-page {
+    .checkout-form {
+      .right-dropdown {
+        .custom-input {
+          width: 100%;
+        }
+      }
+    }
+    .order-next-page-btn {
+      margin: 0;
+    }
+    select {
+      width: 100%;
+    }
+    .text-field {
+      input {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 820px) {
+  .order-next-page {
+    .checkout-form {
+      .right-dropdown {
+        .custom-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

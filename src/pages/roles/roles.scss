@@ -1,0 +1,68 @@
+@import "../../assets/styles/colors.scss";
+
+.roles-page {
+  background-color: $white-color;
+  position: relative;
+  height: 100vh;
+  .role-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid gray;
+    background-color: $white-color;
+    box-shadow: $main-box-shadow-dark;
+    text-align: center;
+    margin: 0.5rem;
+    height: 260px;
+    width: 260px;
+    cursor: pointer;
+    img {
+      margin-top: 1.5rem;
+      width: 170px;
+    }
+    h3 {
+      position: absolute;
+      margin-bottom: 1rem;
+      bottom: 0;
+    }
+    &:nth-child(2) {
+      img {
+        margin-top: 4rem;
+      }
+    }
+    &:nth-child(3) {
+      img {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .roles-page {
+    padding: 0 2rem;
+    .role-card {
+      height: 150px;
+      width: 150px;
+      img {
+        margin-top: 0;
+        width: 100px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+      &:nth-child(2) {
+        img {
+          margin-top: 2rem;
+        }
+      }
+      &:nth-child(3) {
+        img {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}

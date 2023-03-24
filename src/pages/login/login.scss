@@ -1,0 +1,171 @@
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/mixins.scss";
+
+.login-container {
+  padding: 0 10rem;
+  .login-page {
+    height: 90vh;
+    .login-actions {
+      width: 400px;
+      a {
+        color: $black-color;
+      }
+      button {
+        @include button-style(
+          $bg-color: $dark-blue-color,
+          $color: $white-color,
+          $padding: 0.7rem 3rem,
+          $radius: 0,
+          $border: none,
+          $margin: 0,
+          $font-size: 0.8rem,
+          $box-shadow: $main-box-shadow-dark
+        );
+      }
+    }
+  }
+}
+.form-control {
+  border-radius: 0;
+  border: 1px solid #024a96;
+}
+.create-account {
+  display: flex;
+  margin-top: 30px;
+  .create-account-link {
+    color: #06488e;
+    font-weight: bolder;
+  }
+}
+
+.login-container h1 {
+  font-size: 2.1rem;
+  font-weight: 350;
+}
+.btn {
+  @include button-style(
+    $bg-color: $dark-blue-color,
+    $color: $white-color,
+    $padding: 0.7rem 2rem,
+    $radius: 0,
+    $border: none,
+    $margin: 1rem 0,
+    $font-size: 0.8rem,
+    $box-shadow: $main-box-shadow-dark
+  );
+}
+.account-info-container {
+  padding: 0 15rem;
+  .account-info-page {
+    h6 {
+      font-size: 13px;
+      font-weight: bold;
+      margin: 1.3rem 0;
+    }
+    .custom-dropdown {
+      margin-top: 1.3rem;
+      label {
+        font-weight: bold;
+        font-size: 13px;
+      }
+      select {
+        padding: 1rem 0.4rem;
+        background: url("../../assets/icons/down-arrow.png") no-repeat right
+          white;
+        -webkit-appearance: none;
+        background-position-x: 95%;
+      }
+      svg {
+        top: 3rem;
+        right: 0.8rem;
+      }
+    }
+    button {
+      @include button-style(
+        $bg-color: $dark-blue-color,
+        $color: $white-color,
+        $padding: 0.7rem 2rem,
+        $radius: 0,
+        $border: none,
+        $margin: 1rem 0,
+        $font-size: 0.8rem,
+        $box-shadow: $main-box-shadow-dark
+      );
+    }
+    .acc-tag {
+      font-size: 12px;
+    }
+    .info-tag {
+      font-size: 12px;
+    }
+    .disabled-btn {
+      opacity: 0.6;
+    }
+  }
+}
+.select_icon {
+  position: absolute !important;
+  top: 46px;
+  right: 10px;
+  color: #06488e;
+}
+.account__section .text-field {
+  position: relative;
+  padding-bottom: 8px;
+}
+.account__section .selectvalue {
+  background: white;
+  padding: 11px;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0;
+  border: 1px solid #024a96;
+  margin-bottom: 30px;
+  .css-1s2u09g-control {
+    border: none !important;
+  }
+}
+.account__section .text-field p {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .login-container {
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .login-container {
+    padding: 0;
+    .login-page {
+      .text-field {
+        input {
+          width: 100% !important;
+        }
+      }
+      .login-actions {
+        width: 100%;
+      }
+    }
+  }
+  .account-info-container {
+    .account-info-page {
+      .text-field {
+        input {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 820px) {
+  .account-info-container {
+    padding: 0;
+    .account-info-page {
+      height: auto;
+    }
+  }
+}

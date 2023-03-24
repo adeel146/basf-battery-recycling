@@ -1,0 +1,236 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+.assignment-page {
+  .table-data {
+    overflow-y: hidden;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    .custom-table-head {
+      background-color: $dark-blue-color;
+      color: $white-color;
+      text-align: center;
+      th {
+        font-weight: bold;
+        padding: 1rem 0.8rem;
+        text-align: left;
+        font-size: 10px;
+      }
+    }
+    .custom-table-body {
+      tr {
+        .main-td {
+          padding: 0.4rem 0;
+        }
+        svg {
+          color: $dark-blue-color;
+        }
+        .accordion {
+          .accordion-item {
+            border-radius: 0;
+            background-color: transparent;
+            border: none;
+            margin-bottom: 0.9rem;
+            &:target {
+              border: none;
+            }
+          }
+
+          .accordion-button {
+            border-radius: 0;
+            padding: 0;
+            tr {
+              td {
+                padding: 1rem 0.8rem;
+                font-size: 11px;
+              }
+            }
+            &:not(.collapsed) {
+              &::after {
+                transform: rotate(-90deg);
+                margin-top: -0.4rem;
+              }
+            }
+            &:focus {
+              border-color: none;
+              box-shadow: none;
+            }
+            &::after {
+              background-size: 0.9rem;
+              margin-top: 0.8rem;
+              position: absolute;
+              right: 0rem;
+            }
+            &[aria-expanded="true"] {
+              border: none !important;
+            }
+          }
+          .accordion-collapse {
+            border-radius: 0;
+            background-color: $gray-color;
+          }
+          .accordion-body {
+            padding: 0;
+          }
+        }
+        &:first-child {
+          .accordion {
+            margin-top: 0.5rem;
+          }
+        }
+        .export-btn {
+          @include button-style(
+            $bg-color: $dark-blue-color,
+            $color: $white-color,
+            $padding: 0.7rem 2rem,
+            $radius: 0,
+            $border: none,
+            $margin: 0,
+            $font-size: 0.8rem,
+            $box-shadow: $main-box-shadow-dark
+          );
+        }
+      }
+    }
+  }
+  .export {
+    p {
+      font-weight: bold;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    svg {
+      cursor: pointer;
+      color: $dark-blue-color;
+    }
+  }
+}
+.assignment-page.management-company-page tr th.filter_Data,
+.assignment-page.management-company-page tr td.filter_Data
+{
+ min-width: 160px !important;
+}
+@media screen and (max-width: 1200px) {
+  .assignment-page {
+    .table-data {
+      .custom-table-head {
+        th {
+          padding: 1rem 11px;
+        }
+
+        .custom-table-body {
+          tr {
+            .accordion {
+              .accordion-button {
+                tr {
+                  td {
+                    padding: 1rem 11px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .management-company-page {
+    .table-data {
+      .custom-table-body {
+        tr {
+          .accordion {
+            .accordion-button {
+              &::after {
+                right: 0rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 500px) and (max-width: 820px) {
+  .dealer-page {
+    .table-data {
+      .custom-table-body {
+        tr {
+          .accordion {
+            .accordion-button {
+              &::after {
+                right: 0.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .management-company-page {
+    .table-data {
+      .custom-table-body {
+        tr {
+          .accordion {
+            .accordion-button {
+              &::after {
+                right: 0rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .recycler-page {
+    .table-data {
+      .custom-table-body {
+        tr {
+          .accordion {
+            .accordion-button {
+              &::after {
+                right: 0.1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .assignment-page {
+    .table-data {
+      .custom-table-head {
+        th {
+          padding: 1rem 11px;
+        }
+
+        .custom-table-body {
+          tr {
+            .accordion {
+              .accordion-button {
+                tr {
+                  td {
+                    padding: 1rem 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .table-responsive {
+    .table-data {
+      min-width: 500px;
+      width: 1020px;
+    }
+  }
+}
